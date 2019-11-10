@@ -1,23 +1,16 @@
 public class Encounter
     {
-    private string _name;
-    private EncounterType _type;
-    private int _winThreshold, _loseThreshold = 0;
-
     public Encounter(string name, EncounterType type, int winThresh)
         {  
         Name = name;
-        _type = type;
+        Type = type;
         WinThreshold = winThresh;
+        LoseThreshold = 0;
         }
 
-    public string Name { get => _name; set => _name = value; }
-    public EncounterType Type { get => _type; set => _type = value; }
-    public int WinThreshold { get => _winThreshold; set => _winThreshold = value; }
-    public int LoseThreshold { get => _loseThreshold; set => _loseThreshold = value; }
+    public string Name { get; set; }
+    public EncounterType Type { get; set; }
+    public int WinThreshold { get; set; }
+    public int LoseThreshold { get; set; }
 }
 
-public enum EncounterType
-    {
-    Jam, Performance   
-    }

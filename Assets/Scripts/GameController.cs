@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour
     {
 
     private Encounter _currentEncounter;
+    private List<Musician> band;
 
     public Encounter GetCurrentEncounter()
         {
@@ -20,6 +21,17 @@ public class GameController : MonoBehaviour
     public void Awake()
         {
         DontDestroyOnLoad(this.gameObject);
+        band = new List<Musician>();
+        }
+
+    public void AddMusician(Musician musician) 
+        {
+        band.Add(musician);
+        }
+
+    public List<Musician> GetBand() 
+        {
+        return band;
         }
 
     
