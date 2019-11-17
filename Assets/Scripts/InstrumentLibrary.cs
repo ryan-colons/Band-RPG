@@ -9,6 +9,7 @@ public class InstrumentLibrary {
             {
             new MusicAction("Strum", 10, 1),
             new MusicAction("Shred", 20, 2),
+            new MusicAction("The Secret Third Option", 20, 2),
             }
         },
         {
