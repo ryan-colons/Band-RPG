@@ -40,24 +40,24 @@ public class MapUI : MonoBehaviour
         }
 
         InstrumentType instrument = InstrumentType.Guitar;
-        Sprite sprite = Resources.Load<Sprite>("Sprites/guitar.png");
+        Sprite sprite = Resources.Load<Sprite>("Sprites/guitar");
 
         Toggle activeToggle = _musicianToggles.ActiveToggles().First();
         switch(activeToggle.name) {
             case "guitarist":
                 instrument = InstrumentType.Guitar;
-                sprite = Resources.Load<Sprite>("Sprites/guitar.png");
+                sprite = Resources.Load<Sprite>("Sprites/guitar");
                 break;
             case "pianist":
                 instrument = InstrumentType.Piano;
-                sprite = Resources.Load<Sprite>("Sprites/keys.png");
+                sprite = Resources.Load<Sprite>("Sprites/keys");
                 break;
             case "drummer":
                 instrument = InstrumentType.Drum;
-                sprite = Resources.Load<Sprite>("Sprites/drum.png");
+                sprite = Resources.Load<Sprite>("Sprites/drum");
                 break;
         }
-
+        
         Musician musician = new Musician(name, new Instrument(instrument, sprite));
         gameController.AddMusician(musician);
         
