@@ -18,6 +18,7 @@ public class InstrumentLibrary {
             {
             new MusicAction("Glissando", 30, 3),
             new MusicAction("Comp", 5, 1),
+            new MusicAction("Trill", 20, 2),
             }
         },
         {
@@ -26,6 +27,7 @@ public class InstrumentLibrary {
             {
             new MusicAction("Backbeat", 20, 2),
             new MusicAction("Crash", 10, 1),
+            new MusicAction("Paradiddle", 15, 2),
             }
         },
     };
