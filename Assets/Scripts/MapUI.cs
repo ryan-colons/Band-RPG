@@ -102,7 +102,7 @@ public class MapUI : MonoBehaviour
         {
         foreach(MapBandListUI ui in bandListEntries) 
             {
-            ui.gameObject.SetActive(false);
+            ui.ClearEntry();
             }
 
         List<Musician> bandMembers = _gameController.GetBand();
@@ -112,4 +112,6 @@ public class MapUI : MonoBehaviour
             bandListEntries[i].SetMusician(bandMembers[i]);
             }
         }
+
+   
     }
