@@ -7,8 +7,10 @@ public class ActionPanelUI : MonoBehaviour
     {
     [SerializeField]
     private Button[] moveActionButtons;
-    
-
+    [SerializeField]
+    private EncounterUI encounterUI;
+    [SerializeField]
+    private Text musicianName;
         void Start()
             {
             this.gameObject.SetActive(false);
@@ -34,17 +36,22 @@ public class ActionPanelUI : MonoBehaviour
 
                 MusicAction musicAction = musician.GetMusicActions()[i];
 
+
                 button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => moveBegin(musicAction));
+                button.onClick.AddListener(() => moveBegin(musician, musicAction));
 
                 Text buttonText = button.transform.Find("Text").GetComponent<Text>();
                 buttonText.text = $"{musicAction.Name} ({musicAction.RoundsToCooldown})";
+
+                musicianName.text = musician.Name + "'s moves:";
                 }
             }
         
-        private void moveBegin(MusicAction musicAction)
+        private void moveBegin(Musician musician, MusicAction musicAction)
             {
-            Debug.Log(musicAction.Name);
+            musician.CurrentAction = musicAction;
+            //This method should probably be called somewhere else instead, but this works for now.
+            encounterUI.UpdateCurrentActions();
             }
     }
 

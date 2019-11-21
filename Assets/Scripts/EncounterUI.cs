@@ -12,6 +12,9 @@ public class EncounterUI : MonoBehaviour
     private GameController _gameController;
     [SerializeField]
     private ActionPanelUI _actionPanel;
+    [SerializeField]
+    private Text currentOutputText;
+    private int currentOutputValue;
     public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -34,11 +37,29 @@ public class EncounterUI : MonoBehaviour
                 Debug.Log($"Introducing... {currentMusician.Name} on the {currentMusician.Instrument.Type.ToString()}");
             }
         }
-
+    
     public void SetEncounterNameText (string name) 
         {
         _encounterNameText.text = name;
         }
 
+    public void UpdateCurrentActions()
+        {
+        foreach(BandMemberUI ui in playerMusicianSprites)
+            {
+            if(ui.gameObject.activeSelf)
+                {
+                ui.UpdateAction();
+                }
+            }
+        //I'm not certain that this calculation should occur here.
+        currentOutputValue = 0;
+        foreach(Musician musician in _gameController.GetBand())
+            {
+            currentOutputValue = currentOutputValue + musician.CurrentAction.Power;
+            }
+        
+        currentOutputText.text = currentOutputValue.ToString();
+        }
     
 }
