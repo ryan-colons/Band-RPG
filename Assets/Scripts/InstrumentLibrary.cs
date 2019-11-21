@@ -7,6 +7,7 @@ public class InstrumentLibrary {
         InstrumentType.Guitar,
         new List<MusicAction>
             {
+            new MusicAction("Tacet", 0, 0),
             new MusicAction("Strum", 10, 1),
             new MusicAction("Shred", 20, 2),
             new MusicAction("The Secret Third Option", 20, 2),
@@ -16,6 +17,7 @@ public class InstrumentLibrary {
        InstrumentType.Piano,
         new List<MusicAction>   
             {
+            new MusicAction("Tacet", 0, 0),
             new MusicAction("Glissando", 30, 3),
             new MusicAction("Comp", 5, 1),
             new MusicAction("Trill", 20, 2),
@@ -25,11 +27,13 @@ public class InstrumentLibrary {
       InstrumentType.Drum,
         new List<MusicAction>
             {
+            new MusicAction("Tacet", 0, 0),
             new MusicAction("Backbeat", 20, 2),
             new MusicAction("Crash", 10, 1),
             new MusicAction("Paradiddle", 15, 2),
             }
         },
+        
     };
 
 }
