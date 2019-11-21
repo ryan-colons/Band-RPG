@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1389efacbf8260847a8c9202264ed5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deleteMember: {fileID: 2008796529}
 --- !u!1 &115672202
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1389efacbf8260847a8c9202264ed5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deleteMember: {fileID: 343941687}
 --- !u!1 &281633371
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +536,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 343941688}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129067137}
+        m_MethodName: DeleteEntry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &343941688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +811,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 472825646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1613415667}
+        m_MethodName: DeleteEntry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &472825646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,6 +2791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1389efacbf8260847a8c9202264ed5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deleteMember: {fileID: 1715767852}
 --- !u!1 &1613415663
 GameObject:
   m_ObjectHideFlags: 0
@@ -2857,6 +2882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1389efacbf8260847a8c9202264ed5bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deleteMember: {fileID: 472825645}
 --- !u!1 &1684458601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,7 +3093,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1715767853}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1611668083}
+        m_MethodName: DeleteEntry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1715767853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3339,7 +3376,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008796530}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 47871549}
+        m_MethodName: DeleteEntry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2008796530
 MonoBehaviour:
   m_ObjectHideFlags: 0

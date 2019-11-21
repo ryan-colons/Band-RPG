@@ -570,7 +570,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2100403696}
+      objectReference: {fileID: 852314060}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectMusician
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99e5481f21efcb4d87fa484a473923e, type: 3}
 --- !u!224 &852314059 stripped
@@ -651,8 +681,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.4340725, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0.999852, b: 0.995283, a: 1}
     m_SelectedColor: {r: 1, g: 0, b: 0.8691969, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -850,7 +880,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2100403696}
+      objectReference: {fileID: 1059691817}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectMusician
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99e5481f21efcb4d87fa484a473923e, type: 3}
 --- !u!224 &1059691816 stripped
@@ -1117,7 +1177,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2100403696}
+      objectReference: {fileID: 1295520288}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectMusician
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99e5481f21efcb4d87fa484a473923e, type: 3}
 --- !u!224 &1295520287 stripped
@@ -1198,8 +1288,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.4340725, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.97851866, g: 0.9811321, b: 0.9765041, a: 1}
+    m_PressedColor: {r: 0.990566, g: 0.99041945, b: 0.98589355, a: 1}
     m_SelectedColor: {r: 1, g: 0, b: 0.8691969, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1393,8 +1483,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.4340725, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0.9696857, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.99733627, g: 1, b: 0.995283, a: 1}
+    m_PressedColor: {r: 1, g: 0.999852, b: 0.995283, a: 1}
     m_SelectedColor: {r: 1, g: 0, b: 0.8691969, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1500,6 +1590,7 @@ MonoBehaviour:
   - {fileID: 852314060}
   - {fileID: 1295520288}
   - {fileID: 1059691817}
+  _actionPanel: {fileID: 0}
 --- !u!1 &1893344361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,8 +1706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.07501221, y: 108.81}
-  m_SizeDelta: {x: -568.4, y: -245.88}
+  m_AnchoredPosition: {x: 0, y: 105.61}
+  m_SizeDelta: {x: -654.58, y: -211.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2100403698
 MonoBehaviour:
@@ -1625,7 +1716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100403696}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1811,7 +1902,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2100403696}
+      objectReference: {fileID: 7980933898518628878}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectMusician
+      objectReference: {fileID: 0}
+    - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99e5481f21efcb4d87fa484a473923e, type: 3}
 --- !u!114 &7980933898518628878 stripped

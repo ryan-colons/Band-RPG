@@ -13,7 +13,7 @@ public class ActionPanelUI : MonoBehaviour
             {
             this.gameObject.SetActive(false);
             GameController gameController = GameObject.Find("GameController").GetComponent<GameController>();
-            OpenPanel(gameController.GetBand()[0]);
+            //OpenPanel(gameController.GetBand()[0]);
             }
 
         public void OpenPanel(Musician musician)

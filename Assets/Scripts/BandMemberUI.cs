@@ -11,7 +11,8 @@ public class BandMemberUI : MonoBehaviour
     private Text musicianNameText;
     [SerializeField]
     private Image musicianInstrumentIcon;
-    
+    [SerializeField]
+    private ActionPanelUI actionPanel;
     public void SetMusician(Musician musician) 
         {
         _musician = musician;
@@ -21,6 +22,6 @@ public class BandMemberUI : MonoBehaviour
 
     public void SelectMusician()
         {
-        
+        actionPanel.OpenPanel(_musician);
         }
 }

@@ -10,7 +10,8 @@ public class EncounterUI : MonoBehaviour
     [SerializeField]
     private BandMemberUI[] playerMusicianSprites;
     private GameController _gameController;
-
+    [SerializeField]
+    private ActionPanelUI _actionPanel;
     public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -39,4 +40,5 @@ public class EncounterUI : MonoBehaviour
         _encounterNameText.text = name;
         }
 
+    
 }
