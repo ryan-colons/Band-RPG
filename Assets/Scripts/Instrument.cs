@@ -14,5 +14,5 @@ public class Instrument {
 
 public enum InstrumentType
     {
-    Guitar, Piano, Drum
+    Guitar, Piano, Drum, Bass
     }

@@ -33,7 +33,16 @@ public class InstrumentLibrary {
             new MusicAction("Paradiddle", 15, 2),
             }
         },
-        
-    };
+        {
+        InstrumentType.Bass,
+        new List<MusicAction>
+            {
+            new MusicAction("Tacet", 0, 0),
+            new MusicAction("Pedal Note", 20, 2),
+            new MusicAction("Walking Bass", 10, 1),
+            new MusicAction("Slap", 15, 2),
+            }
+        }    
+    };  
 
 }

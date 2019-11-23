@@ -63,15 +63,19 @@ public class MapUI : MonoBehaviour
             {
             case "guitaristToggle":
                 instrument = InstrumentType.Guitar;
-                sprite = Resources.Load<Sprite>("Sprites/guitar");
+                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar");
                 break;
             case "pianistToggle":
                 instrument = InstrumentType.Piano;
-                sprite = Resources.Load<Sprite>("Sprites/keys");
+                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/keys");
                 break;
             case "drummerToggle":
                 instrument = InstrumentType.Drum;
-                sprite = Resources.Load<Sprite>("Sprites/drum");
+                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/drum");
+                break;
+            case "bassistToggle":
+                instrument = InstrumentType.Bass;
+                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/bass");
                 break;
             }
         
