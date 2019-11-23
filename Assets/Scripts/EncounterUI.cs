@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class EncounterUI : MonoBehaviour
 {
+    private Encounter encounter;
     [SerializeField]
     private Text _encounterNameText;
+    [SerializeField]
+    private Text _bandNameText;
     [SerializeField]
     private BandMemberUI[] playerMusicianSprites;
     private GameController _gameController;
@@ -14,7 +17,12 @@ public class EncounterUI : MonoBehaviour
     private ActionPanelUI _actionPanel;
     [SerializeField]
     private Text currentOutputText;
-    private int currentOutputValue;
+    [SerializeField]
+    private Text currentHypeText;
+    [SerializeField]
+    private Button timeStepButton;
+
+    
     public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
@@ -22,7 +30,15 @@ public class EncounterUI : MonoBehaviour
 
     public void Start ()
         {
-        SetEncounterNameText(_gameController.GetCurrentEncounter().Name);
+        encounter = _gameController.GetCurrentEncounter();
+        
+        //Do we need to have a distinct method for this?
+        SetEncounterNameText(encounter.Name);
+        //Rather than just this?
+        _bandNameText.text = _gameController.bandName;
+        currentOutputText.text = encounter.GetCurrentBandValue().ToString();
+        currentHypeText.text = encounter.currentHypeValue.ToString();
+        
         List<Musician> bandMembers = _gameController.GetBand();
 
         foreach(BandMemberUI ui in playerMusicianSprites) {
@@ -52,14 +68,13 @@ public class EncounterUI : MonoBehaviour
                 ui.UpdateAction();
                 }
             }
-        //I'm not certain that this calculation should occur here.
-        currentOutputValue = 0;
-        foreach(Musician musician in _gameController.GetBand())
-            {
-            currentOutputValue = currentOutputValue + musician.CurrentAction.Power;
-            }
-        
-        currentOutputText.text = currentOutputValue.ToString();
+        currentOutputText.text = encounter.GetCurrentBandValue().ToString();
         }
-    
+
+    public void TimeStep()
+        {
+        encounter.TimeStep();
+        currentHypeText.text = encounter.currentHypeValue.ToString();
+
+        }
 }
