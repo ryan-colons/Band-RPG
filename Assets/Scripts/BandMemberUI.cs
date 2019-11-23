@@ -22,6 +22,7 @@ public class BandMemberUI : MonoBehaviour
         _musician = musician;
         musicianNameText.text = musician.Name;
         musicianInstrumentIcon.sprite = musician.Instrument.Sprite;
+        GetComponent<Image>().sprite = musician.MusicianPortrait;
         }
 
     public void SelectMusician()
