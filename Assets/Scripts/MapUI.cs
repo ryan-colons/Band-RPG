@@ -17,38 +17,46 @@ public class MapUI : MonoBehaviour
     private GameController gameController;
 
     [SerializeField]
-    private InputField _nameInput;
+    private InputField _musoNameInput;
+    [SerializeField]
+    private InputField _bandNameInput;
     [SerializeField]
     private ToggleGroup _musicianToggles;
     [SerializeField]
     private Toggle[] _instrumentToggles;
     [SerializeField]
     private MapBandListUI[] bandListEntries;
-
-    public void Awake ()
+   
+        public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         }
-    public void GoToJam ()
+    public void GoToShow ()
         {
-        Debug.Log("Going to jam");
+        Debug.Log("Going to show");
 
-        if (gameController.GetBand().Count > 0)
+        if (string.IsNullOrEmpty(_bandNameInput.text))
             {
-            Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100);
-            gameController.SetCurrentEncounter(encounter);
-            SceneManager.LoadScene(1);
+            Debug.LogWarning("Your band has no name!");
+            return;
             }
-        else
+
+        if (gameController.GetBand().Count <= 0)
             {
             Debug.LogWarning("Your band has no members!");
+            return;
             }
+            
+            gameController.bandName = _bandNameInput.text;
         
+            Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100, 30);
+            gameController.SetCurrentEncounter(encounter);
+            SceneManager.LoadScene(1);
         }
 
     public void AddMember ()
         {
-        string name = _nameInput.text;
+        string name = _musoNameInput.text;
         if (string.IsNullOrEmpty(name)) 
             {
             Debug.LogWarning("This band member needs a name!");
@@ -83,7 +91,7 @@ public class MapUI : MonoBehaviour
         gameController.AddMusician(musician);
         UpdateBandList();
         
-        _nameInput.text = "";
+        _musoNameInput.text = "";
 
 
 
@@ -92,11 +100,11 @@ public class MapUI : MonoBehaviour
     public void RandomMember ()
         {
         string name = namesList[rnd.Next(namesList.Count)];
-        if(_nameInput.text == name)
+        if(_musoNameInput.text == name)
             {
             //I tried to get this to reroll if it's the same name, but I can't think of a tidy way to do it!
             }
-        _nameInput.text = name;
+        _musoNameInput.text = name;
 
         _musicianToggles.SetAllTogglesOff();
         _instrumentToggles[rnd.Next(_instrumentToggles.Length)].isOn = true;

@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 
     private Encounter _currentEncounter;
     private List<Musician> band;
+    public string bandName { get; set; }
 
     public Encounter GetCurrentEncounter()
         {
