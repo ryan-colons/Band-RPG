@@ -35,7 +35,6 @@ public class MapBandListUI : MonoBehaviour
         {
         Debug.Log(_musician.Name + " removed from band");
         _gameController.RemoveMusician(_musician);
-    //I'm so sure there's a better way of doing this!
         _mapUI.UpdateBandList();
         }
     }

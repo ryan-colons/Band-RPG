@@ -16,7 +16,7 @@ public class EncounterUI : MonoBehaviour
     [SerializeField]
     private ActionPanelUI _actionPanel;
     [SerializeField]
-    private Text currentOutputText;
+    private Text _currentOutputText;
     [SerializeField]
     private Text currentHypeText;
     [SerializeField]
@@ -36,11 +36,8 @@ public class EncounterUI : MonoBehaviour
         {
         encounter = _gameController.GetCurrentEncounter();
         
-        //Do we need to have a distinct method for this?
         SetEncounterNameText(encounter.Name);
-        //Rather than just this?
         _bandNameText.text = _gameController.bandName;
-        currentOutputText.text = encounter.GetCurrentBandValue().ToString();
         currentHypeText.text = encounter.currentHypeValue.ToString();
         
         List<Musician> bandMembers = _gameController.GetBand();
