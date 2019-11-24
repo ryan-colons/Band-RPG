@@ -18,7 +18,7 @@ public class ActionPanelUI : MonoBehaviour
             //OpenPanel(gameController.GetBand()[0]);
             }
 
-        public void OpenPanel(Musician musician)
+        public void OpenPanel(Musician musician, BandMemberUI bandMemberUI)
             {
             this.gameObject.SetActive(true);
 
@@ -38,7 +38,7 @@ public class ActionPanelUI : MonoBehaviour
 
 
                 button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => moveBegin(musician, musicAction));
+                button.onClick.AddListener(() => moveBegin(musician, musicAction, bandMemberUI));
 
                 Text buttonText = button.transform.Find("Text").GetComponent<Text>();
                 buttonText.text = $"{musicAction.Name} ({musicAction.RoundsToCooldown})";
@@ -47,11 +47,10 @@ public class ActionPanelUI : MonoBehaviour
                 }
             }
         
-        private void moveBegin(Musician musician, MusicAction musicAction)
+        private void moveBegin(Musician musician, MusicAction musicAction, BandMemberUI bandMemberUI)
             {
             musician.CurrentAction = musicAction;
-            //This method should probably be called somewhere else instead, but this works for now.
-            encounterUI.UpdateCurrentActions();
+            bandMemberUI.UpdateAction();
             }
     }
 

@@ -15,8 +15,11 @@ public class BandMemberUI : MonoBehaviour
     private ActionPanelUI actionPanel;
     [SerializeField]
     private Text currentActionText;
-
-
+    private AudioSource audioSource;
+    public void Start()
+        {
+        audioSource = GetComponent<AudioSource>();
+        }
     public void SetMusician(Musician musician) 
         {
         _musician = musician;
@@ -27,11 +30,22 @@ public class BandMemberUI : MonoBehaviour
 
     public void SelectMusician()
         {
-        actionPanel.OpenPanel(_musician);
+        actionPanel.OpenPanel(_musician, this);
         }
 
     public void UpdateAction()
         {
         currentActionText.text = _musician.CurrentAction.Name;
+        audioSource.clip = _musician.CurrentAction.AudioClip;
+        if (EncounterUI.IsRunning) 
+            {
+            audioSource.Play();
+            }
         }
+
+    public void StartPlaying()
+        {
+        audioSource.Play();
+        }
+    
 }

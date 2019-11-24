@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,10 +24,12 @@ public class EncounterUI : MonoBehaviour
     [SerializeField]
     private Slider hypeSlider;
 
-    
+    public static bool IsRunning = false;
+
     public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        IsRunning = false;
         }
 
     public void Start ()
@@ -61,18 +63,6 @@ public class EncounterUI : MonoBehaviour
         _encounterNameText.text = name;
         }
 
-    public void UpdateCurrentActions()
-        {
-        foreach(BandMemberUI ui in playerMusicianSprites)
-            {
-            if(ui.gameObject.activeSelf)
-                {
-                ui.UpdateAction();
-                }
-            }
-        currentOutputText.text = encounter.GetCurrentBandValue().ToString();
-        }
-
     public void TimeStep()
         {
         encounter.TimeStep();
@@ -87,5 +77,13 @@ public class EncounterUI : MonoBehaviour
         Debug.Log(encounter.currentHypeValue);
         }
 
+    public void EncounterStart()
+        {
+        InvokeRepeating("TimeStep", 0f, encounter.GetTimeStepLength());
+        IsRunning = true;
+        foreach (BandMemberUI ui in playerMusicianSprites) 
+            {
+            ui.StartPlaying();
+            }
         }
 }
