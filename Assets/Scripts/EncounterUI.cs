@@ -21,6 +21,8 @@ public class EncounterUI : MonoBehaviour
     private Text currentHypeText;
     [SerializeField]
     private Button timeStepButton;
+    [SerializeField]
+    private Slider hypeSlider;
 
     
     public void Awake ()
@@ -75,6 +77,15 @@ public class EncounterUI : MonoBehaviour
         {
         encounter.TimeStep();
         currentHypeText.text = encounter.currentHypeValue.ToString();
+        UpdateHypeSlider();
+        }
+
+    public void UpdateHypeSlider()
+        {
+        float hypePercentage = (float)(encounter.currentHypeValue - encounter.LoseThreshold)/(float)(encounter.WinThreshold - encounter.LoseThreshold);
+        hypeSlider.value = hypePercentage;
+        Debug.Log(encounter.currentHypeValue);
+        }
 
         }
 }

@@ -49,7 +49,7 @@ public class MapUI : MonoBehaviour
             
             gameController.bandName = _bandNameInput.text;
         
-            Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100, 30);
+            Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100, (5f/60f));
             gameController.SetCurrentEncounter(encounter);
             SceneManager.LoadScene(1);
         }
