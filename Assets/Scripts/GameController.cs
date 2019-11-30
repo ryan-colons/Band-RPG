@@ -10,6 +10,22 @@ public class GameController : MonoBehaviour
     private List<Musician> band;
     public string bandName { get; set; }
 
+    // ensure only one GameController ever exists
+    private static GameController theOnlyGameController;
+    private void Awake()
+        {
+        if (theOnlyGameController != null && theOnlyGameController != this)
+            {
+            Destroy(this.gameObject);
+            }
+        else
+            {
+            theOnlyGameController = this;
+            DontDestroyOnLoad(this.gameObject);
+            band = new List<Musician>();
+            }
+        }
+
     public Encounter GetCurrentEncounter()
         {
         return _currentEncounter;
@@ -20,11 +36,6 @@ public class GameController : MonoBehaviour
         _currentEncounter = encounter;
         }
 
-    public void Awake()
-        {
-        DontDestroyOnLoad(this.gameObject);
-        band = new List<Musician>();
-        }
 
     public void AddMusician(Musician musician) 
         {
