@@ -39,14 +39,17 @@ public class GameController : MonoBehaviour
 
     public void AddMusician(Musician musician) 
         {
+        if (band == null) band = new List<Musician>();
         band.Add(musician);
         }
     public void RemoveMusician(Musician musician)
         {
-        band.Remove(musician);
+        if (band == null) band = new List<Musician>();
+        else band.Remove(musician);
         }
     public List<Musician> GetBand() 
         {
+        if (band == null) band = new List<Musician>();
         return band;
         }
 
