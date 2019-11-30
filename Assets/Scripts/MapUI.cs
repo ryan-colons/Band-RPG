@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -51,7 +50,7 @@ public class MapUI : MonoBehaviour
         
             Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100, (5f/60f));
             gameController.SetCurrentEncounter(encounter);
-            SceneManager.LoadScene(1);
+            gameController.LoadScene(1);
         }
 
     public void AddMember ()
