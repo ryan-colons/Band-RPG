@@ -44,11 +44,14 @@ public class Encounter
         if (successState == 1)
             {
             Debug.Log($"Woohoo, we love {_gameController.bandName}! We're maximally hyped!");
+            AddRandomMusician();
+            _gameController.LoadScene("Map");
             }
         
         if (successState == 0)
             {
             Debug.Log($"{_gameController.bandName}? Never heard of them!");
+            _gameController.LoadScene("Map");
             }
         }
 
@@ -79,6 +82,12 @@ public class Encounter
         // 20 = arbitrary scale for move powers
         float maxMovePower = 20;
         return maxMovePower / maxBandValue;
+        }
+
+    private void AddRandomMusician()
+        {
+        Musician musician = new Musician(_gameController.GetRandomName(), _gameController.GetRandomInstrument(), _gameController.GetRandomSprite());
+        _gameController.AddMusician(musician); 
         }
     }
 

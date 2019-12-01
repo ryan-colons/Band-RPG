@@ -14,7 +14,7 @@ public class Musician
         {  
         Name = name;
         Instrument = instrument;
-        CurrentAction = InstrumentLibrary.InstrumentActions[Instrument.Type][0];
+        CurrentAction = GetMusicActions()[0];
         MusicianPortrait = portrait;
         }
 

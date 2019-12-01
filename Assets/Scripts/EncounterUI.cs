@@ -100,4 +100,9 @@ public class EncounterUI : MonoBehaviour
             ui.StartPlaying();
             }
         }
+
+    public void AutoWin()
+        {
+        encounter.EncounterEnd(1);
+        }
 }
