@@ -53,9 +53,9 @@ public class GameController : MonoBehaviour
         return band;
         }
 
-    public void LoadScene(int sceneIndex) 
+    public void LoadScene(string sceneName) 
         {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
         }
     
     }

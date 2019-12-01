@@ -14,7 +14,7 @@ public class BandManagementUI : MonoBehaviour
     public void ReturnToMap()
         {
         _gameController.bandName = _bandNameField.text;
-        _gameController.LoadScene(0);
+        _gameController.LoadScene("Map");
         }
 
     public void Awake ()

@@ -31,7 +31,7 @@ public class MapUI : MonoBehaviour
 
     public void LoadBandManagement()
         {
-        _gameController.LoadScene(2);
+        _gameController.LoadScene("Band Management");
         }
 
     public void LoadEncounter1()
@@ -40,7 +40,7 @@ public class MapUI : MonoBehaviour
             {
             Encounter encounter = new Encounter("Cat with two hands", EncounterType.Performance, 100, (5f/60f));
             _gameController.SetCurrentEncounter(encounter);
-            _gameController.LoadScene(1);
+            _gameController.LoadScene("Encounter");
             }
         }
 
@@ -50,7 +50,7 @@ public class MapUI : MonoBehaviour
             {
             Encounter encounter = new Encounter("Dunedin Stadium", EncounterType.Performance, 100, (5f/60f));
             _gameController.SetCurrentEncounter(encounter);
-            _gameController.LoadScene(1);
+            _gameController.LoadScene("Encounter");
             }
         }
 
@@ -60,16 +60,16 @@ public class MapUI : MonoBehaviour
             {
             Encounter encounter = new Encounter("Spaaaaace", EncounterType.Performance, 100, (5f/60f));
             _gameController.SetCurrentEncounter(encounter);
-            _gameController.LoadScene(1);
+            _gameController.LoadScene("Encounter");
             }
         }
 
     public void InstaBand()
         {
-        _gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar"))));
-        _gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys"))));
-        _gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum"))));
-        _gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass"))));
+        _gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar")), Resources.Load<Sprite>("Sprites/Portraits/portrait1")));
+        _gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys")), Resources.Load<Sprite>("Sprites/Portraits/portrait2")));
+        _gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum")), Resources.Load<Sprite>("Sprites/Portraits/portrait3")));
+        _gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass")), Resources.Load<Sprite>("Sprites/Portraits/portrait4")));
         _gameController.bandName = "The Scoobies";
         }
     }

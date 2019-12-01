@@ -10,14 +10,12 @@ public class Musician
     public MusicAction CurrentAction { get; set; }
     public Sprite MusicianPortrait { get; set; }
 
-    public Musician(string name, Instrument instrument)
+    public Musician(string name, Instrument instrument, Sprite portrait)
         {  
         Name = name;
         Instrument = instrument;
         CurrentAction = InstrumentLibrary.InstrumentActions[Instrument.Type][0];
-
-        Sprite[] portraits = Resources.LoadAll<Sprite>("Sprites/Portraits");
-        MusicianPortrait = portraits[rnd.Next(portraits.Length)];
+        MusicianPortrait = portrait;
         }
 
     public List<MusicAction> GetMusicActions()
