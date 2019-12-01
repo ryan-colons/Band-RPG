@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4081828324270015228}
   - component: {fileID: 4081828324270015231}
   m_Layer: 5
-  m_Name: BandListEntry1
+  m_Name: BandListEntry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,10 +88,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4081828324270015203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1389efacbf8260847a8c9202264ed5bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 78eddb510ebd5a44ebb0bde0071418c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteMember: {fileID: 0}
+  deleteMember: {fileID: 6139777574258750900}
 --- !u!1 &4488907200075339034
 GameObject:
   m_ObjectHideFlags: 0

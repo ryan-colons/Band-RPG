@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MapBandListUI : MonoBehaviour
+public class BandManagementListUI : MonoBehaviour
     {
     private GameController _gameController;
-    private MapUI _mapUI;
+    private BandManagementUI _bandManagementUI;
     [SerializeField]
     private Button deleteMember;
     private Musician _musician;  
     public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        _mapUI = GameObject.Find("MapUI").GetComponent<MapUI>();
+        _bandManagementUI = GameObject.Find("BandManagementUI").GetComponent<BandManagementUI>();
         }
     public void SetMusician(Musician musician)
         {
@@ -35,6 +35,6 @@ public class MapBandListUI : MonoBehaviour
         {
         Debug.Log(_musician.Name + " removed from band");
         _gameController.RemoveMusician(_musician);
-        _mapUI.UpdateBandList();
+        _bandManagementUI.UpdateBandList();
         }
     }

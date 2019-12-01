@@ -6,93 +6,31 @@ using System.Collections.Generic;
 public class MapUI : MonoBehaviour
     {
     private GameController _gameController;
-    static System.Random rnd = new System.Random();
-    
-    List<string> namesList = new List<string>{"Bronklyn", "Bradio", "Bricks", "Brizzel", "Bornagain", 
-                                         "Breakslow", "Beelzebabe", "Binnards", "Bungheap", "Bardsworth", 
-                                         "Banhomer", "Billboar", "Buggins", "Beethoven"};
 
-    [SerializeField]
-    private GameController gameController;
-
-    [SerializeField]
-    private InputField _musoNameInput;
-    [SerializeField]
-    private InputField _bandNameInput;
-    [SerializeField]
-    private ToggleGroup _musicianToggles;
-    [SerializeField]
-    private Toggle[] _instrumentToggles;
-    [SerializeField]
-    private MapBandListUI[] bandListEntries;
-   
-        public void Awake ()
+    public void Awake ()
         {
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
         }
-    public void GoToShow ()
+    public bool CheckBand ()
         {
         Debug.Log("Going to show");
 
-        if (string.IsNullOrEmpty(_bandNameInput.text))
+        if (string.IsNullOrEmpty(_gameController.bandName))
             {
             Debug.LogWarning("Your band has no name!");
-            return;
+            return false;
             }
 
-        if (gameController.GetBand().Count <= 0)
+        if (_gameController.GetBand().Count <= 0)
             {
             Debug.LogWarning("Your band has no members!");
-            return;
+            return false;
             }
-            
-            gameController.bandName = _bandNameInput.text;
-        
-            Encounter encounter = new Encounter("GIG 1", EncounterType.Performance, 100, (5f/60f));
-            gameController.SetCurrentEncounter(encounter);
-            gameController.LoadScene(1);
+        return true;
         }
 
-    public void AddMember ()
+    public void LoadBandManagement()
         {
-        string name = _musoNameInput.text;
-        if (string.IsNullOrEmpty(name)) 
-            {
-            Debug.LogWarning("This band member needs a name!");
-            return;
-            }
-
-        InstrumentType instrument = InstrumentType.Guitar;
-        Sprite sprite = Resources.Load<Sprite>("Sprites/guitar");
-
-        Toggle activeToggle = _musicianToggles.ActiveToggles().First();
-        switch(activeToggle.name) 
-            {
-            case "guitaristToggle":
-                instrument = InstrumentType.Guitar;
-                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar");
-                break;
-            case "pianistToggle":
-                instrument = InstrumentType.Piano;
-                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/keys");
-                break;
-            case "drummerToggle":
-                instrument = InstrumentType.Drum;
-                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/drum");
-                break;
-            case "bassistToggle":
-                instrument = InstrumentType.Bass;
-                sprite = Resources.Load<Sprite>("Sprites/InstrumentIcons/bass");
-                break;
-            }
-        
-        Musician musician = new Musician(name, new Instrument(instrument, sprite));
-        gameController.AddMusician(musician);
-        UpdateBandList();
-        
-        _musoNameInput.text = "";
-
-
 
         }
     
