@@ -7,6 +7,8 @@ public class EncounterUI : MonoBehaviour
 {
     private Encounter encounter;
     [SerializeField]
+    private GameObject _gameControllerPrefab;
+    [SerializeField]
     private Text _encounterNameText;
     [SerializeField]
     private Text _bandNameText;
@@ -23,12 +25,27 @@ public class EncounterUI : MonoBehaviour
     private Button timeStepButton;
     [SerializeField]
     private Slider hypeSlider;
+    
 
     public static bool IsRunning = false;
 
+    public GameController CreateDummyGameController() 
+        {
+        GameController gameController = Instantiate(_gameControllerPrefab).GetComponent<GameController>();
+        gameController.gameObject.name = "GameController";
+        gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar"))));
+        gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys"))));
+        gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum"))));
+        gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass"))));
+        gameController.SetCurrentEncounter(new Encounter("Test Encounter", EncounterType.Performance, 100f, 30f));
+        return gameController;
+        }
+
     public void Awake ()
         {
-        _gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        GameObject gameControllerGameObject = GameObject.Find("GameController");
+        if (gameControllerGameObject != null) _gameController = gameControllerGameObject.GetComponent<GameController>();
+        else _gameController = CreateDummyGameController();
         IsRunning = false;
         }
 
