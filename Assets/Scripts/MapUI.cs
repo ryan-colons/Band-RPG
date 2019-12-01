@@ -31,36 +31,36 @@ public class MapUI : MonoBehaviour
 
     public void LoadBandManagement()
         {
-
+        _gameController.LoadScene(2);
         }
-    
-    public void RandomMember ()
+
+    public void LoadEncounter1()
         {
-        string name = namesList[rnd.Next(namesList.Count)];
-        if(_musoNameInput.text == name)
+        if (CheckBand())
             {
-            //I tried to get this to reroll if it's the same name, but I can't think of a tidy way to do it!
-            }
-        _musoNameInput.text = name;
-
-        _musicianToggles.SetAllTogglesOff();
-        _instrumentToggles[rnd.Next(_instrumentToggles.Length)].isOn = true;
-        }  
-
-    public void UpdateBandList()
-        {
-        foreach(MapBandListUI ui in bandListEntries) 
-            {
-            ui.ClearEntry();
-            }
-
-        List<Musician> bandMembers = _gameController.GetBand();
-
-        for (int i = 0; i < bandMembers.Count; i++) 
-            {
-            bandListEntries[i].SetMusician(bandMembers[i]);
+            Encounter encounter = new Encounter("Cat with two hands", EncounterType.Performance, 100, (5f/60f));
+            _gameController.SetCurrentEncounter(encounter);
+            _gameController.LoadScene(1);
             }
         }
 
-   
+    public void LoadEncounter2()
+        {
+        if (CheckBand())
+            {
+            Encounter encounter = new Encounter("Dunedin Stadium", EncounterType.Performance, 100, (5f/60f));
+            _gameController.SetCurrentEncounter(encounter);
+            _gameController.LoadScene(1);
+            }
+        }
+
+    public void LoadEncounter3()
+        {
+        if (CheckBand())
+            {
+            Encounter encounter = new Encounter("Spaaaaace", EncounterType.Performance, 100, (5f/60f));
+            _gameController.SetCurrentEncounter(encounter);
+            _gameController.LoadScene(1);
+            }
+        }
     }
