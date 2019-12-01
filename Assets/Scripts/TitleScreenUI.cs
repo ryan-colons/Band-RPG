@@ -34,20 +34,20 @@ public class TitleScreenUI : MonoBehaviour
             return;
             }
 
-        Instrument instrument = new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar"));
+        Instrument instrument = new Instrument(InstrumentType.Guitar);
         switch(_instrumentDropdown.options[_instrumentDropdown.value].text)
             {
             case "Guitar":
-                instrument = new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar"));
+                instrument = new Instrument(InstrumentType.Guitar);
                 break;
             case "Piano":
-                instrument = new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys"));
+                instrument = new Instrument(InstrumentType.Piano);
                 break;
             case "Drum":
-                instrument = new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum"));
+                instrument = new Instrument(InstrumentType.Drum);
                 break;
             case "Bass":
-                instrument = new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass"));
+                instrument = new Instrument(InstrumentType.Bass);
                 break; 
             }
 

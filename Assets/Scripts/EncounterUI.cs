@@ -33,10 +33,10 @@ public class EncounterUI : MonoBehaviour
         {
         GameController gameController = Instantiate(_gameControllerPrefab).GetComponent<GameController>();
         gameController.gameObject.name = "GameController";
-        _gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar")), Resources.Load<Sprite>("Sprites/Portraits/portrait1")));
-        _gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys")), Resources.Load<Sprite>("Sprites/Portraits/portrait2")));
-        _gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum")), Resources.Load<Sprite>("Sprites/Portraits/portrait3")));
-        _gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass")), Resources.Load<Sprite>("Sprites/Portraits/portrait4")));
+        _gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar), Resources.Load<Sprite>("Sprites/Portraits/portrait1")));
+        _gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano), Resources.Load<Sprite>("Sprites/Portraits/portrait2")));
+        _gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum), Resources.Load<Sprite>("Sprites/Portraits/portrait3")));
+        _gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass), Resources.Load<Sprite>("Sprites/Portraits/portrait4")));
         gameController.SetCurrentEncounter(new Encounter("Test Encounter", EncounterType.Performance, 100f, 30f));
         return gameController;
         }
