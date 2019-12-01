@@ -7,10 +7,13 @@ public class BandManagementUI : MonoBehaviour
     {
     private GameController _gameController;
     [SerializeField]
-    private BandMemberPanelUI[] musicianPanels;
-    
+    private BandMemberPanelUI[] _musicianPanels;
+    [SerializeField]
+    private InputField _bandNameField;
+
     public void ReturnToMap()
         {
+        _gameController.bandName = _bandNameField.text;
         _gameController.LoadScene(0);
         }
 
@@ -24,17 +27,19 @@ public class BandManagementUI : MonoBehaviour
         {
         List<Musician> bandMembers = _gameController.GetBand();
 
-        foreach(BandMemberPanelUI ui in musicianPanels) 
+        foreach(BandMemberPanelUI ui in _musicianPanels) 
             {
             ui.gameObject.SetActive(false);
             }
 
-        for (int i = 0; i < bandMembers.Count && i < musicianPanels.Length; i++) 
+        for (int i = 0; i < bandMembers.Count && i < _musicianPanels.Length; i++) 
             {
             Musician currentMusician = bandMembers[i];
-            musicianPanels[i].gameObject.SetActive(true);
-            musicianPanels[i].SetMusician(currentMusician);
+            _musicianPanels[i].gameObject.SetActive(true);
+            _musicianPanels[i].SetMusician(currentMusician);
             }
+
+        _bandNameField.text =_gameController.bandName;
         }
    
     }
