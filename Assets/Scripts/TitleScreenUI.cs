@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class TitleScreenUI : MonoBehaviour
     {
     static System.Random rnd = new System.Random();
-    
     [SerializeField]
     private InputField _musoNameInput;
     [SerializeField]
@@ -17,14 +16,13 @@ public class TitleScreenUI : MonoBehaviour
     private Image _musicianPortrait;
     [SerializeField]
     private GameObject _gameControllerPrefab;
-
-    private List<Sprite> playerSprites;
-
-    private void Start ()
+    private GameController _gameController;
+   
+    public void Start()
         {
-        playerSprites = new List<Sprite>(Resources.LoadAll<Sprite>("Sprites/Portraits"));
+        _gameController = Instantiate(_gameControllerPrefab).GetComponent<GameController>();
+        _gameController.gameObject.name = "GameController";
         }
-
     public void StartGame()
         {
 
@@ -53,32 +51,16 @@ public class TitleScreenUI : MonoBehaviour
 
         Musician musician = new Musician(_musoNameInput.text, instrument, _musicianPortrait.sprite);
 
-        GameController gameController = Instantiate(_gameControllerPrefab).GetComponent<GameController>();
-        gameController.gameObject.name = "GameController";
-        gameController.AddMusician(musician);
-        gameController.bandName = _bandNameInput.text;
-        gameController.LoadScene("Map");
-
+        _gameController.AddMusician(musician);
+        _gameController.bandName = _bandNameInput.text;
+        _gameController.LoadScene("Map");
         }
 
-    public string GetRandomName ()
-        {
-        List<string> namesList = new List<string>{"Bronklyn", "Bradio", "Bricks", "Brizzel", "Bornagain", 
-                                        "Breakslow", "Beelzebabe", "Binnards", "Bungheap", "Bardsworth", 
-                                        "Banhomer", "Billboar", "Buggins", "Beethoven"};
-        return namesList[rnd.Next(namesList.Count)];
-        }
-
-    public Sprite GetRandomSprite ()
-        {
-        return playerSprites[rnd.Next(playerSprites.Count)];
-        }
-    
     public void Randomise ()
         {
-        _musoNameInput.text = GetRandomName();
-        _bandNameInput.text = GetRandomName();
-        _musicianPortrait.sprite = GetRandomSprite();
+        _musoNameInput.text = _gameController.GetRandomName();
+        _bandNameInput.text = _gameController.GetRandomName();
+        _musicianPortrait.sprite = _gameController.GetRandomSprite();
         _instrumentDropdown.value = rnd.Next(_instrumentDropdown.options.Count);
         }  
    
