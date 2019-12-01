@@ -63,4 +63,12 @@ public class MapUI : MonoBehaviour
             _gameController.LoadScene(1);
             }
         }
+
+    public void InstaBand()
+        {
+        _gameController.AddMusician(new Musician("Bento", new Instrument(InstrumentType.Guitar, Resources.Load<Sprite>("Sprites/InstrumentIcons/guitar"))));
+        _gameController.AddMusician(new Musician("Bort", new Instrument(InstrumentType.Piano, Resources.Load<Sprite>("Sprites/InstrumentIcons/keys"))));
+        _gameController.AddMusician(new Musician("Bbbbb", new Instrument(InstrumentType.Drum, Resources.Load<Sprite>("Sprites/InstrumentIcons/drum"))));
+        _gameController.AddMusician(new Musician("Boson", new Instrument(InstrumentType.Bass, Resources.Load<Sprite>("Sprites/InstrumentIcons/bass"))));
+        }
     }

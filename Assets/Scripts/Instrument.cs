@@ -10,9 +10,3 @@ public class Instrument {
         Sprite = sprite;
         }
 }
-
-
-public enum InstrumentType
-    {
-    Guitar, Piano, Drum, Bass
-    }
