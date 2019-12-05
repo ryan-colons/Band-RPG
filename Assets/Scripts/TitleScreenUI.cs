@@ -22,10 +22,11 @@ public class TitleScreenUI : MonoBehaviour
         {
         _gameController = Instantiate(_gameControllerPrefab).GetComponent<GameController>();
         _gameController.gameObject.name = "GameController";
+        _musicianPortrait.sprite = MusicianCreationHelper.GetRandomSprite();
         }
+
     public void StartGame()
         {
-
         if (string.IsNullOrEmpty(_musoNameInput.text) || string.IsNullOrEmpty(_bandNameInput.text)) 
             {
             Debug.LogWarning("Add names!");
@@ -62,6 +63,36 @@ public class TitleScreenUI : MonoBehaviour
         _bandNameInput.text = MusicianCreationHelper.GetRandomName();
         _musicianPortrait.sprite = MusicianCreationHelper.GetRandomSprite();
         _instrumentDropdown.value = rnd.Next(_instrumentDropdown.options.Count);
+        }
+
+    private void ScrollPortrait (int n)
+        {
+        List<Sprite> sprites = MusicianCreationHelper.GetAllSprites();
+        int indexOfCurrentSprite = sprites.IndexOf(_musicianPortrait.sprite);
+        if (indexOfCurrentSprite != -1) 
+            {
+            if (indexOfCurrentSprite == 0 && n < 0)
+                {
+                    _musicianPortrait.sprite = sprites[sprites.Count - 1];
+                }
+            else if (indexOfCurrentSprite == sprites.Count - 1 && n > 0)
+                {
+                    _musicianPortrait.sprite = sprites[0];
+                }
+            else
+                {
+                    _musicianPortrait.sprite = sprites[indexOfCurrentSprite + n];
+                }
+            }
+        }
+
+    public void PreviousPortrait ()
+        {
+        ScrollPortrait(-1);
+        }
+    public void NextPortrait ()
+        {
+        ScrollPortrait(1);
         }
    
     }

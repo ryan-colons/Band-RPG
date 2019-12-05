@@ -13,10 +13,15 @@ public class MusicianCreationHelper
 
     public static string GetRandomName ()
         {
-        
         return namesList[random.Next(namesList.Count)];
         }
     
+    public static List<Sprite> GetAllSprites ()
+        {
+        // return a new list so that playerSprites doesn't accidentally get altered anywhere
+        return new List<Sprite>(Resources.LoadAll<Sprite>("Sprites/Portraits"));
+        }
+
     public static Sprite GetRandomSprite ()
         {
         return playerSprites[random.Next(playerSprites.Count)];
