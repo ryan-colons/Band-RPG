@@ -86,7 +86,7 @@ public class Encounter
 
     private void AddRandomMusician()
         {
-        Musician musician = new Musician(_gameController.GetRandomName(), _gameController.GetRandomInstrument(), _gameController.GetRandomSprite());
+        Musician musician = new Musician(MusicianCreationHelper.GetRandomName(), MusicianCreationHelper.GetRandomInstrument(), MusicianCreationHelper.GetRandomSprite());
         _gameController.AddMusician(musician); 
         }
     }

@@ -58,10 +58,10 @@ public class TitleScreenUI : MonoBehaviour
 
     public void Randomise ()
         {
-        _musoNameInput.text = _gameController.GetRandomName();
-        _bandNameInput.text = _gameController.GetRandomName();
-        _musicianPortrait.sprite = _gameController.GetRandomSprite();
+        _musoNameInput.text = MusicianCreationHelper.GetRandomName();
+        _bandNameInput.text = MusicianCreationHelper.GetRandomName();
+        _musicianPortrait.sprite = MusicianCreationHelper.GetRandomSprite();
         _instrumentDropdown.value = rnd.Next(_instrumentDropdown.options.Count);
-        }  
+        }
    
     }
