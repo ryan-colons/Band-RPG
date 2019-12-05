@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 853744084876265063}
   - component: {fileID: 5507580628412004152}
   m_Layer: 5
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,10 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7dfb9869533984cac9148aee710dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicianNameText: {fileID: 7980933900315044633}
-  musicianInstrumentIcon: {fileID: 7980933898889060039}
-  actionPanel: {fileID: 0}
-  currentActionText: {fileID: 0}
+  _musicianNameText: {fileID: 7980933900315044633}
+  _musicianInstrumentIcon: {fileID: 7980933898889060039}
+  _actionPanel: {fileID: 0}
+  _currentActionText: {fileID: 6626837086047344596}
 --- !u!114 &853744084876265063
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1233,6 +1233,11 @@ PrefabInstance:
       propertyPath: currentActionText
       value: 
       objectReference: {fileID: 852314061}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: _actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1662,6 +1667,11 @@ PrefabInstance:
       propertyPath: currentActionText
       value: 
       objectReference: {fileID: 1059691818}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: _actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2137,6 +2147,11 @@ PrefabInstance:
       propertyPath: currentActionText
       value: 
       objectReference: {fileID: 1295520289}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: _actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2955,16 +2970,16 @@ MonoBehaviour:
     type: 3}
   _encounterNameText: {fileID: 205207038}
   _bandNameText: {fileID: 1727486926}
-  playerMusicianSprites:
+  _playerMusicianSprites:
   - {fileID: 7980933898518628878}
   - {fileID: 852314060}
   - {fileID: 1295520288}
   - {fileID: 1059691817}
-  _actionPanel: {fileID: 0}
-  _currentOutputText: {fileID: 0}
-  currentHypeText: {fileID: 1941227075}
-  timeStepButton: {fileID: 1914959262}
-  hypeSlider: {fileID: 1486760348}
+  _actionPanel: {fileID: 2100403700}
+  _currentOutputText: {fileID: 775187673}
+  _currentHypeText: {fileID: 1941227075}
+  _timeStepButton: {fileID: 1914959262}
+  _hypeSlider: {fileID: 1486760348}
 --- !u!1 &1882227717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,13 +3427,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbcf1cf304083b4fb751a01667b7e85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveActionButtons:
+  _moveActionButtons:
   - {fileID: 1553800162}
   - {fileID: 1000588847}
   - {fileID: 1772362370}
   - {fileID: 636521117}
-  encounterUI: {fileID: 1805281569}
-  musicianName: {fileID: 769990288}
+  _encounterUI: {fileID: 1805281569}
+  _musicianName: {fileID: 769990288}
 --- !u!1001 &7980933898518628877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3551,6 +3566,11 @@ PrefabInstance:
       propertyPath: currentActionText
       value: 
       objectReference: {fileID: 457519622}
+    - target: {fileID: 8427770020350796087, guid: a99e5481f21efcb4d87fa484a473923e,
+        type: 3}
+      propertyPath: _actionPanel
+      value: 
+      objectReference: {fileID: 2100403700}
     - target: {fileID: 853744084876265063, guid: a99e5481f21efcb4d87fa484a473923e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
