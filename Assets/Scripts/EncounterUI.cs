@@ -63,7 +63,7 @@ public class EncounterUI : MonoBehaviour
             ui.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < bandMembers.Count; i++) 
+        for (int i = 0; i < bandMembers.Count && i < playerMusicianSprites.Length; i++) 
             {
                 Musician currentMusician = bandMembers[i];
                 playerMusicianSprites[i].gameObject.SetActive(true);
