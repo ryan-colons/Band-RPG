@@ -8,44 +8,44 @@ public class BandMemberUI : MonoBehaviour
 {
     private Musician _musician;
     [SerializeField]
-    private Text musicianNameText;
+    private Text _musicianNameText;
     [SerializeField]
-    private Image musicianInstrumentIcon;
+    private Image _musicianInstrumentIcon;
     [SerializeField]
-    private ActionPanelUI actionPanel;
+    private ActionPanelUI _actionPanel;
     [SerializeField]
-    private Text currentActionText;
-    private AudioSource audioSource;
+    private Text _currentActionText;
+    private AudioSource _audioSource;
     public void Start()
         {
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         }
     public void SetMusician(Musician musician) 
         {
         _musician = musician;
-        musicianNameText.text = musician.Name;
-        musicianInstrumentIcon.sprite = musician.Instrument.Sprite;
+        _musicianNameText.text = musician.Name;
+        _musicianInstrumentIcon.sprite = musician.Instrument.Sprite;
         GetComponent<Image>().sprite = musician.MusicianPortrait;
         }
 
     public void SelectMusician()
         {
-        actionPanel.OpenPanel(_musician, this);
+        _actionPanel.OpenPanel(_musician, this);
         }
 
     public void UpdateAction()
         {
-        currentActionText.text = _musician.CurrentAction.Name;
-        audioSource.clip = _musician.CurrentAction.AudioClip;
+        _currentActionText.text = _musician.CurrentAction.Name;
+        _audioSource.clip = _musician.CurrentAction.AudioClip;
         if (EncounterUI.IsRunning) 
             {
-            audioSource.Play();
+            _audioSource.Play();
             }
         }
 
     public void StartPlaying()
         {
-        audioSource.Play();
+        _audioSource.Play();
         }
     
 }

@@ -4,16 +4,16 @@ using UnityEngine;
 public class MusicianCreationHelper
     {
 
-    private static System.Random random = new System.Random();
-    private static List<string> namesList = new List<string>
+    private static System.Random _random = new System.Random();
+    private static List<string> _namesList = new List<string>
         {"Bronklyn", "Bradio", "Bricks", "Brizzel", "Bornagain", 
         "Breakslow", "Beelzebabe", "Binnards", "Bungheap", "Bardsworth", 
         "Banhomer", "Billboar", "Buggins", "Beethoven"};
-    private static List<Sprite> playerSprites = new List<Sprite>(Resources.LoadAll<Sprite>("Sprites/Portraits"));
+    private static List<Sprite> _playerSprites = new List<Sprite>(Resources.LoadAll<Sprite>("Sprites/Portraits"));
 
     public static string GetRandomName ()
         {
-        return namesList[random.Next(namesList.Count)];
+        return _namesList[_random.Next(_namesList.Count)];
         }
     
     public static List<Sprite> GetAllSprites ()
@@ -24,12 +24,12 @@ public class MusicianCreationHelper
 
     public static Sprite GetRandomSprite ()
         {
-        return playerSprites[random.Next(playerSprites.Count)];
+        return _playerSprites[_random.Next(_playerSprites.Count)];
         }
 
     public static Instrument GetRandomInstrument()
         {
-        Instrument instrument = new Instrument((InstrumentType)random.Next(System.Enum.GetNames(typeof(InstrumentType)).Length));
+        Instrument instrument = new Instrument((InstrumentType)_random.Next(System.Enum.GetNames(typeof(InstrumentType)).Length));
         return instrument;
         }
     }

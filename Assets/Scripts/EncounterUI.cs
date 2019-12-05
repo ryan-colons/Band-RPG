@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EncounterUI : MonoBehaviour
 {
-    private Encounter encounter;
+    private Encounter _encounter;
     [SerializeField]
     private GameObject _gameControllerPrefab;
     [SerializeField]
@@ -13,18 +13,18 @@ public class EncounterUI : MonoBehaviour
     [SerializeField]
     private Text _bandNameText;
     [SerializeField]
-    private BandMemberUI[] playerMusicianSprites;
+    private BandMemberUI[] _playerMusicianSprites;
     private GameController _gameController;
     [SerializeField]
     private ActionPanelUI _actionPanel;
     [SerializeField]
     private Text _currentOutputText;
     [SerializeField]
-    private Text currentHypeText;
+    private Text _currentHypeText;
     [SerializeField]
-    private Button timeStepButton;
+    private Button _timeStepButton;
     [SerializeField]
-    private Slider hypeSlider;
+    private Slider _hypeSlider;
     
 
     public static bool IsRunning = false;
@@ -51,23 +51,23 @@ public class EncounterUI : MonoBehaviour
 
     public void Start ()
         {
-        encounter = _gameController.GetCurrentEncounter();
+        _encounter = _gameController.GetCurrentEncounter();
         
-        SetEncounterNameText(encounter.Name);
+        SetEncounterNameText(_encounter.Name);
         _bandNameText.text = _gameController.bandName;
-        currentHypeText.text = encounter.currentHypeValue.ToString();
+        _currentHypeText.text = _encounter.currentHypeValue.ToString();
         
         List<Musician> bandMembers = _gameController.GetBand();
 
-        foreach(BandMemberUI ui in playerMusicianSprites) {
+        foreach(BandMemberUI ui in _playerMusicianSprites) {
             ui.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < bandMembers.Count && i < playerMusicianSprites.Length; i++) 
+        for (int i = 0; i < bandMembers.Count && i < _playerMusicianSprites.Length; i++) 
             {
                 Musician currentMusician = bandMembers[i];
-                playerMusicianSprites[i].gameObject.SetActive(true);
-                playerMusicianSprites[i].SetMusician(currentMusician);
+                _playerMusicianSprites[i].gameObject.SetActive(true);
+                _playerMusicianSprites[i].SetMusician(currentMusician);
                 Debug.Log($"Introducing... {currentMusician.Name} on the {currentMusician.Instrument.Type.ToString()}");
             }
         }
@@ -79,23 +79,23 @@ public class EncounterUI : MonoBehaviour
 
     public void TimeStep()
         {
-        encounter.TimeStep();
-        currentHypeText.text = encounter.currentHypeValue.ToString();
+        _encounter.TimeStep();
+        _currentHypeText.text = _encounter.currentHypeValue.ToString();
         UpdateHypeSlider();
         }
 
     public void UpdateHypeSlider()
         {
-        float hypePercentage = (float)(encounter.currentHypeValue - encounter.LoseThreshold)/(float)(encounter.WinThreshold - encounter.LoseThreshold);
-        hypeSlider.value = hypePercentage;
-        Debug.Log(encounter.currentHypeValue);
+        float hypePercentage = (float)(_encounter.currentHypeValue - _encounter.LoseThreshold)/(float)(_encounter.WinThreshold - _encounter.LoseThreshold);
+        _hypeSlider.value = hypePercentage;
+        Debug.Log(_encounter.currentHypeValue);
         }
 
     public void EncounterStart()
         {
-        InvokeRepeating("TimeStep", 0f, encounter.GetTimeStepLength());
+        InvokeRepeating("TimeStep", 0f, _encounter.GetTimeStepLength());
         IsRunning = true;
-        foreach (BandMemberUI ui in playerMusicianSprites) 
+        foreach (BandMemberUI ui in _playerMusicianSprites) 
             {
             ui.StartPlaying();
             }
@@ -103,6 +103,6 @@ public class EncounterUI : MonoBehaviour
 
     public void AutoWin()
         {
-        encounter.EncounterEnd(1);
+        _encounter.EncounterEnd(1);
         }
 }

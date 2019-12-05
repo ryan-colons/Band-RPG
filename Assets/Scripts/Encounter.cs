@@ -10,8 +10,8 @@ public class Encounter
     public float HypeResistance { get; set; }
     private GameController _gameController;
     public float currentHypeValue = 50f;
-    private const float timeStepLength = 0.1f;
-    private float bandValueCoefficient;
+    private const float _timeStepLength = 0.1f;
+    private float _bandValueCoefficient;
 
     public Encounter(string name, EncounterType type, float winThresh, float hypeResistance)
         {  
@@ -21,7 +21,7 @@ public class Encounter
         LoseThreshold = 0f;
         HypeResistance = hypeResistance;
         _gameController = GameObject.Find("GameController").GetComponent<GameController>();
-        bandValueCoefficient = BandValueCoefficientConstant();
+        _bandValueCoefficient = BandValueCoefficientConstant();
         }
 
     public void TimeStep()
@@ -63,19 +63,19 @@ public class Encounter
             currentBandValue = currentBandValue + musician.CurrentAction.Power;
             }
         currentBandValue /= _gameController.GetBand().Count;
-        currentBandValue /= bandValueCoefficient;
+        currentBandValue /= _bandValueCoefficient;
         return currentBandValue;
         }
 
     public float GetTimeStepLength()
         {
-        return timeStepLength;
+        return _timeStepLength;
         }
 
     private float BandValueCoefficientConstant()
         {
         float standardEncounterSeconds = 60f;
-        float standardEncounterSteps = standardEncounterSeconds/timeStepLength;
+        float standardEncounterSteps = standardEncounterSeconds/_timeStepLength;
         float baselineHypeChange = 50f / standardEncounterSteps;
         // 3 because the best/worst case scenario should be to win/lose in 1/3 of the standard encounter time
         float maxBandValue = 3 * baselineHypeChange;
